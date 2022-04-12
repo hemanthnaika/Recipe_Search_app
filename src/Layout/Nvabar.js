@@ -236,7 +236,7 @@ interface NavItem {
 const NAV_ITEMS= [
   {
     label: 'ALL RECIPE',
-    href:'/AllFood',
+    href:'/',
   },
   {
     label: 'SEARCH RECIPE',

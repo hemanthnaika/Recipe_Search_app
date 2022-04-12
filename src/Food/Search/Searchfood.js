@@ -4,17 +4,15 @@ import { HStack } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import SearchFoodCard from "./SearchCard"
 import { useEffect, useState } from 'react'
-import { Wrap, WrapItem ,Center} from '@chakra-ui/react'
+
 export default function Search(){
 const [recipes,setRecipe]=useState([])
 const [data,setData]=useState('Vegetarian')
 
 useEffect(()=>{
   getRecipes()
-
 },[])
 const getRecipes=async()=>{
-
 const res = await fetch(`https://api.edamam.com/search?app_id=bd51454f&app_key=3b359328e30cad3141319969dfedaba9&q=${data}`)
 const DataRecipe= await res.json()
    setRecipe(DataRecipe.hits)
@@ -38,6 +36,7 @@ const DataRecipe= await res.json()
   calories={recipe.recipe.calories} 
   image={recipe.recipe.image} 
   ingredients={recipe.recipe.ingredients} 
+  cuisineType={recipe.recipe.cuisineType} 
   />
 ))}
 </Flex>
