@@ -15,6 +15,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
+
 } from '@chakra-ui/react';
 
 const IMAGE =
@@ -23,7 +24,9 @@ const IMAGE =
 export default function SearchFoodCard({title,calories,image,ingredients,cuisineType}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
+
     <Center py={12} >
+      
       <Box onClick={onOpen}
         role={'group'}
         p={6}
@@ -84,7 +87,7 @@ export default function SearchFoodCard({title,calories,image,ingredients,cuisine
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{title}</ModalHeader>
+          <ModalHeader align={'center'}>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
           <Image
@@ -94,14 +97,17 @@ export default function SearchFoodCard({title,calories,image,ingredients,cuisine
             objectFit={'cover'}
             src={image}
           />
-          <ModalHeader>Ingredients</ModalHeader>
+          <ModalHeader align={'center'}>INGREDIENTS</ModalHeader>
+          <Stack align={'center'} >
+          <ol  >
           {ingredients.map(ingredient=>(
-            <ul>
+            
 <li>{ingredient.text}</li>
-            </ul>
+           
             
           ))}
-          
+           </ol>
+           </Stack>
           </ModalBody>
 
           <ModalFooter>

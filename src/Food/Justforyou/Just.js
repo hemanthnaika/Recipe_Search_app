@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import SearchFoodCard from '../Search/SearchCard';
-export default function Veg(){
+export default function Just(){
   var data =["Pizz","chicken",]
 var randData=data[Math.floor(Math.random()*data.length)]
 const [recipes,setRecipe]=useState([])
@@ -18,12 +18,13 @@ const DataRecipe= await res.json()
 <div>
 <Flex
     w={'full'}
-    h={'20vh'}
+    h={'30vh'}
     backgroundImage={
-      'url(https://media.istockphoto.com/photos/food-background-with-assortment-of-fresh-organic-vegetables-picture-id1203599923?b=1&k=20&m=1203599923&s=170667a&w=0&h=SxSyRNqrW8JQsyh6gCktCwcc16yX-Ymo2-I7NNTRtcA=)'
+      'url(https://images.unsplash.com/photo-1485704686097-ed47f7263ca4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1192&q=80)'
     }
     backgroundSize={'cover'}
-    backgroundPosition={'center center'}></Flex>
+    backgroundPosition={'center center'}>
+      </Flex>
 <Flex justifyContent={'center'} flexWrap={'wrap'}>
     {recipes.map(recipe=>(
   < SearchFoodCard 
@@ -35,6 +36,12 @@ const DataRecipe= await res.json()
   />
 ))}
 </Flex>
+
 </div>  
   )
 }
+
+
+
+
+

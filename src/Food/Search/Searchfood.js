@@ -21,6 +21,14 @@ const DataRecipe= await res.json()
 
   return(
     <div>
+          <Flex
+    w={'full'}
+    h={'20vh'}
+    backgroundImage={
+      'url(https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI=)'
+    }
+    backgroundSize={'cover'}
+    backgroundPosition={'center center'}></Flex>
     <HStack marginTop={'30px'} spacing='10px'>
       <Box marginLeft={'10%'} w={'60%'}>
       <Input onChange={e=>{setData(e.target.value)}}  placeholder='Enter the Recipe' size='lg'  />
